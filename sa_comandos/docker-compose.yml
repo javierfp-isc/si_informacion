@@ -2,7 +2,6 @@ version: '3'
 services:
 #Service sa toma el Dockerfile de ./sa
  sa:
-  privileged: true
   build: ./sa
   #Mapea el puerto 22 del container al 8022 del anfitrión
   ports:

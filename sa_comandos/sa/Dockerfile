@@ -8,7 +8,7 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin
 
 LABEL distribucion="Debian 10"
 LABEL descripcion="Imagen Debian para prácticas sistemas archivos"
-LABEL paquetes="vim, iputils-ping, nano, openssh-server"
+LABEL paquetes="vim, iputils-ping, nano, openssh-server crudini"
 LABEL acceso="usuario: root, password: abc123."
 
 #Copiamos el entrypoint.sh al container
@@ -16,6 +16,9 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 
 #Copiamos el script test.sh al container
 COPY test.sh /usr/bin/test.sh
+
+#Copiamos el archivo plantilla de comandos.ini
+COPY comandos.ini /var/comandos.ini
 
 #Damos permiso al entrypoint y al script
 RUN set -x; \
@@ -28,7 +31,7 @@ RUN set -x; \
 
 #Instalamos paquetes de utilidades
 RUN set -x; \
-	apt update && apt install -y vim iputils-ping nano openssh-server 
+	apt update && apt install -y vim iputils-ping nano openssh-server crudini 
 
 #Configuramos openssh-server para poder acceder con root
 RUN set -x; \
