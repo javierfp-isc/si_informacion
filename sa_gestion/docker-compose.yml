@@ -4,6 +4,3 @@ services:
  sa:
   build: ./sa
   hostname: sa_gestion
-  #Mapea el puerto 22 del container al 8022 del anfitrión
-  ports:
-  - "8022:22"

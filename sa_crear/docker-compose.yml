@@ -5,6 +5,3 @@ services:
   privileged: true
   hostname: sa_crear
   build: ./sa
-  #Mapea el puerto 22 del container al 8022 del anfitrión
-  ports:
-  - "8022:22"

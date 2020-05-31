@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#Arrancamos servicio ssh
-service ssh start
-
 #Invocamos a mount para montar entradas en /etc/fstab
 mount -a
 

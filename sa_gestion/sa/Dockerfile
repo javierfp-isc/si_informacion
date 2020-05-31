@@ -8,7 +8,7 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin
 
 LABEL distribucion="Debian 10"
 LABEL descripcion="Imagen Debian para prácticas sistemas archivos"
-LABEL paquetes="vim, iputils-ping, nano, openssh-server crudini"
+LABEL paquetes="vim, iputils-ping, nano, crudini"
 LABEL acceso="usuario: root, password: abc123."
 
 #Copiamos el entrypoint.sh al container
@@ -31,11 +31,7 @@ RUN set -x; \
 
 #Instalamos paquetes de utilidades
 RUN set -x; \
-	apt update && apt install -y vim iputils-ping nano openssh-server crudini 
-
-#Configuramos openssh-server para poder acceder con root
-RUN set -x; \
-	echo "PermitRootLogin yes\nPasswordAuthentication yes" >> /etc/ssh/sshd_config
+	apt update && apt install -y vim iputils-ping nano crudini 
 
 #Limpiando
 RUN set -x; \
