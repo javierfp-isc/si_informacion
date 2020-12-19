@@ -5,3 +5,5 @@ services:
   privileged: true
   hostname: sa_crear
   build: ./sa
+  ports:
+  - "3389:3389"
