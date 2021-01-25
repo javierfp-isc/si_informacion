@@ -17,3 +17,4 @@ En este repositorio disponemos de los escenarios:
 
 - **sa_crear**: creación de un container para ejecutar las prácticas de creación de sistemas de archivos
 - **sa_gestion**: creación de un container para ejecutar las prácticas de gestión de sistemas de archivos
+- **sa_copias**: creación de dos container para ejecutar las prácticas de copias de seguridad
