@@ -2,7 +2,8 @@ version: '3'
 services:
 #Service sa toma el Dockerfile de ./sa
  sa:
-  privileged: true
+  cap_add:
+  - ALL
   hostname: sa_crear
   build: ./sa
   ports:
